@@ -19,7 +19,7 @@ class NewBeefViewController: UIViewController {
         super.viewDidLoad()
 
         beefTitle.delegate = self
-        charactersRemaining.text = String(55) //ensure that value matches 'length' at end of textField function in extention. 
+        charactersRemaining.text = String(128) //ensure that value matches 'length' at end of textField function in extention.
     }
 
 }
@@ -32,16 +32,16 @@ extension NewBeefViewController: UITextFieldDelegate {
         guard let text = beefTitle.text else { return true }
         let length = text.count + string.count - range.length
 
-        // create an Integer of 55 - the length of your TextField.text to count down
-        let count = 55 - length
+        // create an Integer of 128 - the length of your TextField.text to count down
+        let count = 128 - length
 
         // set the .text property of your UILabel to the live created String
         charactersRemaining.text =  String(count)
 
-        // if you want to limit to 55 charakters
-        // you need to return true and <= 55
+        // if you want to limit to 128 charakters
+        // you need to return true and <= 128
 
-        return length <= 55 // To just allow up to 55 characters
+        return length <= 128 // To just allow up to 128 characters
     }
 
 }

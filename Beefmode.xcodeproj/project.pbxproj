@@ -17,6 +17,8 @@
 		A55BF74C245267CA009873F9 /* Beef.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55BF74B245267CA009873F9 /* Beef.swift */; };
 		A55BF74E24526B29009873F9 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55BF74D24526B29009873F9 /* Comment.swift */; };
 		A5F449FD24526EB600366232 /* BeefListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F449FC24526EB600366232 /* BeefListViewController.swift */; };
+		A5FBE322247435E60091A5F4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FBE321247435E60091A5F4 /* LoginViewController.swift */; };
+		A5FBE324247436990091A5F4 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FBE323247436990091A5F4 /* SignupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		A55BF74B245267CA009873F9 /* Beef.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beef.swift; sourceTree = "<group>"; };
 		A55BF74D24526B29009873F9 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		A5F449FC24526EB600366232 /* BeefListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeefListViewController.swift; sourceTree = "<group>"; };
+		A5FBE321247435E60091A5F4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A5FBE323247436990091A5F4 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,8 @@
 			children = (
 				A55435FB244FDC18007B0CB5 /* NewBeefViewController.swift */,
 				A5F449FC24526EB600366232 /* BeefListViewController.swift */,
+				A5FBE321247435E60091A5F4 /* LoginViewController.swift */,
+				A5FBE323247436990091A5F4 /* SignupViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -190,10 +196,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5FBE324247436990091A5F4 /* SignupViewController.swift in Sources */,
 				A55435E7244F798A007B0CB5 /* AppDelegate.swift in Sources */,
 				A5F449FD24526EB600366232 /* BeefListViewController.swift in Sources */,
 				A55BF74E24526B29009873F9 /* Comment.swift in Sources */,
 				A55BF74A2452453F009873F9 /* BeefController.swift in Sources */,
+				A5FBE322247435E60091A5F4 /* LoginViewController.swift in Sources */,
 				A55BF74C245267CA009873F9 /* Beef.swift in Sources */,
 				A55435E9244F798A007B0CB5 /* SceneDelegate.swift in Sources */,
 				A55435FC244FDC18007B0CB5 /* NewBeefViewController.swift in Sources */,
