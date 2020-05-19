@@ -240,12 +240,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Beef title (max 128 characters)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bmY-k7-ewZ">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Beef title (max 64 characters)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bmY-k7-ewZ">
                                 <rect key="frame" x="8" y="96" width="348" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pwo-bt-BgH">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pwo-bt-BgH">
                                 <rect key="frame" x="364" y="96" width="42" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="UEC-80-Bay"/>
@@ -267,11 +267,11 @@
                         <constraints>
                             <constraint firstItem="9Nb-9N-QYC" firstAttribute="top" secondItem="bmY-k7-ewZ" secondAttribute="bottom" constant="8" id="6GO-SE-3Vm"/>
                             <constraint firstItem="Pwo-bt-BgH" firstAttribute="top" secondItem="dTv-n0-FKA" secondAttribute="top" constant="8" id="7gQ-a0-QgV"/>
+                            <constraint firstItem="Pwo-bt-BgH" firstAttribute="leading" secondItem="bmY-k7-ewZ" secondAttribute="trailing" constant="8" id="9r8-0X-Q3S"/>
                             <constraint firstItem="dTv-n0-FKA" firstAttribute="trailing" secondItem="Pwo-bt-BgH" secondAttribute="trailing" constant="8" id="SfA-u8-gxQ"/>
                             <constraint firstItem="9Nb-9N-QYC" firstAttribute="leading" secondItem="dTv-n0-FKA" secondAttribute="leading" constant="8" id="WsE-Jy-beR"/>
                             <constraint firstItem="dTv-n0-FKA" firstAttribute="trailing" secondItem="9Nb-9N-QYC" secondAttribute="trailing" constant="8" id="ZNp-YA-GYO"/>
                             <constraint firstItem="bmY-k7-ewZ" firstAttribute="leading" secondItem="dTv-n0-FKA" secondAttribute="leading" constant="8" id="hhx-Xj-mkr"/>
-                            <constraint firstItem="Pwo-bt-BgH" firstAttribute="leading" secondItem="bmY-k7-ewZ" secondAttribute="trailing" constant="8" id="qDC-9w-QmF"/>
                             <constraint firstItem="bmY-k7-ewZ" firstAttribute="top" secondItem="dTv-n0-FKA" secondAttribute="top" constant="8" id="voL-11-AHX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dTv-n0-FKA"/>
