@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5cH-Co-7BX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Title-->
+        <scene sceneID="3mD-E3-Au7">
+            <objects>
+                <tableViewController id="pji-c6-HEs" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="io1-tE-j3L">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="toExistingBeef" id="l0o-JF-pu6">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="l0o-JF-pu6" id="Ht4-L4-oua">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="2Cb-7N-3pn" kind="show" identifier="toExistingBeef" id="JI0-EW-pHI"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="pji-c6-HEs" id="y88-vV-nnU"/>
+                            <outlet property="delegate" destination="pji-c6-HEs" id="BAg-A8-B3T"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="Jq5-eD-T9N">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="toLoginPage" id="9uF-BA-Sm1">
+                            <connections>
+                                <segue destination="Fe3-vQ-vrC" kind="show" identifier="toLogin" id="Gyb-jl-bNc"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="New Beef" id="MKA-a2-ZRL">
+                            <connections>
+                                <segue destination="zV0-LS-uiV" kind="show" identifier="toNewBeef" id="U8V-Q1-y7I"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="43L-1Y-ggf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="264" y="123"/>
+        </scene>
+        <!--Existing Beef-->
+        <scene sceneID="wgK-gQ-j62">
+            <objects>
+                <tableViewController id="2Cb-7N-3pn" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="MeZ-ps-nD9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ZNs-xN-ame">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZNs-xN-ame" id="FzC-VP-aqw">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="2Cb-7N-3pn" id="sDD-KK-cQ9"/>
+                            <outlet property="delegate" destination="2Cb-7N-3pn" id="0I9-nl-jUo"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Existing Beef" id="fe7-uj-7J9"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1v0-WJ-ix4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1097" y="488"/>
+        </scene>
+        <!--Log In Page-->
+        <scene sceneID="SyC-t0-pbF">
+            <objects>
+                <viewController title="Log In Page" id="Fe3-vQ-vrC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KDc-YG-9u8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="mkh-DN-DuI"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gAy-ti-NPM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0tU-PA-cLD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="225" y="-558"/>
+        </scene>
+        <!--New Beef-->
+        <scene sceneID="Nrt-ek-B6M">
+            <objects>
+                <viewController id="zV0-LS-uiV" customClass="NewBeefViewController" customModule="Beefmode" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9bb-do-UVa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Beef title (max 128 characters)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bmY-k7-ewZ">
+                                <rect key="frame" x="8" y="96" width="348" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pwo-bt-BgH">
+                                <rect key="frame" x="364" y="96" width="42" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="UEC-80-Bay"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="Put your beef here!" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Nb-9N-QYC">
+                                <rect key="frame" x="8" y="138" width="398" height="255"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="255" id="tp0-NC-7AN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="9Nb-9N-QYC" firstAttribute="top" secondItem="bmY-k7-ewZ" secondAttribute="bottom" constant="8" id="6GO-SE-3Vm"/>
+                            <constraint firstItem="Pwo-bt-BgH" firstAttribute="top" secondItem="dTv-n0-FKA" secondAttribute="top" constant="8" id="7gQ-a0-QgV"/>
+                            <constraint firstItem="dTv-n0-FKA" firstAttribute="trailing" secondItem="Pwo-bt-BgH" secondAttribute="trailing" constant="8" id="SfA-u8-gxQ"/>
+                            <constraint firstItem="9Nb-9N-QYC" firstAttribute="leading" secondItem="dTv-n0-FKA" secondAttribute="leading" constant="8" id="WsE-Jy-beR"/>
+                            <constraint firstItem="dTv-n0-FKA" firstAttribute="trailing" secondItem="9Nb-9N-QYC" secondAttribute="trailing" constant="8" id="ZNp-YA-GYO"/>
+                            <constraint firstItem="bmY-k7-ewZ" firstAttribute="leading" secondItem="dTv-n0-FKA" secondAttribute="leading" constant="8" id="hhx-Xj-mkr"/>
+                            <constraint firstItem="Pwo-bt-BgH" firstAttribute="leading" secondItem="bmY-k7-ewZ" secondAttribute="trailing" constant="8" id="qDC-9w-QmF"/>
+                            <constraint firstItem="bmY-k7-ewZ" firstAttribute="top" secondItem="dTv-n0-FKA" secondAttribute="top" constant="8" id="voL-11-AHX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dTv-n0-FKA"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Beef" id="KLf-J4-1db">
+                        <barButtonItem key="rightBarButtonItem" title="Post!" id="hrI-hI-l3k"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="beefBody" destination="9Nb-9N-QYC" id="jH0-Az-0cO"/>
+                        <outlet property="beefTitle" destination="bmY-k7-ewZ" id="eXw-zX-IVW"/>
+                        <outlet property="charactersRemaining" destination="Pwo-bt-BgH" id="Ets-HP-6q1"/>
+                        <outlet property="postButton" destination="hrI-hI-l3k" id="UsN-v9-M34"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xtb-cf-SUP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1096" y="-264"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="i8c-7m-v42">
+            <objects>
+                <navigationController id="5cH-Co-7BX" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="flg-ck-ErS">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="pji-c6-HEs" kind="relationship" relationship="rootViewController" id="vIN-en-nc8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aw0-qX-AhY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-448" y="123"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="toLoginPage" width="512" height="512"/>
+    </resources>
+</document>
