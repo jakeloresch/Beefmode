@@ -21,7 +21,21 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setUpElements()
+    }
+    
+    func setUpElements() {
+        
+        //hide feedback label
+        feedbackLabel.alpha = 0
+        
+        //style elements
+        Utilities.styleTextField(usernameTextField)
+        Utilities.styleTextField(passwordTextField)
+        Utilities.styleFilledButton(loginButton)
+        Utilities.styleFilledButton(forgotPasswordButton)
+
+        
     }
     
 

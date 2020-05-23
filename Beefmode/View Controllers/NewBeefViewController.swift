@@ -41,7 +41,7 @@ extension NewBeefViewController: UITextFieldDelegate {
         // if you want to limit to 64 charakters
         // you need to return true and <= 64
 
-        return length <= 63 // To just allow up to 64 characters
+        return length <= 63 // To just allow up to 64 characters.
     }
 
 }

@@ -16,12 +16,17 @@
 		A55BF74A2452453F009873F9 /* BeefController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55BF7492452453F009873F9 /* BeefController.swift */; };
 		A55BF74C245267CA009873F9 /* Beef.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55BF74B245267CA009873F9 /* Beef.swift */; };
 		A55BF74E24526B29009873F9 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55BF74D24526B29009873F9 /* Comment.swift */; };
+		A568EFC02477E8950051DB1F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A568EFBF2477E8950051DB1F /* GoogleService-Info.plist */; };
+		A58181F724749CBC0010F022 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58181F624749CBC0010F022 /* Utilities.swift */; };
 		A5F449FD24526EB600366232 /* BeefListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F449FC24526EB600366232 /* BeefListViewController.swift */; };
 		A5FBE322247435E60091A5F4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FBE321247435E60091A5F4 /* LoginViewController.swift */; };
 		A5FBE324247436990091A5F4 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FBE323247436990091A5F4 /* SignupViewController.swift */; };
+		CC173270F14684861A6DF07A /* Pods_Beefmode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9297B8EF469BCA3CDC0B098B /* Pods_Beefmode.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		110F123D9658F9F202A61235 /* Pods-Beefmode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Beefmode.release.xcconfig"; path = "Target Support Files/Pods-Beefmode/Pods-Beefmode.release.xcconfig"; sourceTree = "<group>"; };
+		9297B8EF469BCA3CDC0B098B /* Pods_Beefmode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Beefmode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A55435E3244F798A007B0CB5 /* Beefmode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beefmode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A55435E6244F798A007B0CB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A55435E8244F798A007B0CB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,9 +38,12 @@
 		A55BF7492452453F009873F9 /* BeefController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeefController.swift; sourceTree = "<group>"; };
 		A55BF74B245267CA009873F9 /* Beef.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beef.swift; sourceTree = "<group>"; };
 		A55BF74D24526B29009873F9 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		A568EFBF2477E8950051DB1F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A58181F624749CBC0010F022 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utilities.swift; path = ../../../../../Downloads/CustomLoginDemo/CustomLoginDemo/Helpers/Utilities.swift; sourceTree = "<group>"; };
 		A5F449FC24526EB600366232 /* BeefListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeefListViewController.swift; sourceTree = "<group>"; };
 		A5FBE321247435E60091A5F4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A5FBE323247436990091A5F4 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		CF7AB727A525A019945EFAC4 /* Pods-Beefmode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Beefmode.debug.xcconfig"; path = "Target Support Files/Pods-Beefmode/Pods-Beefmode.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC173270F14684861A6DF07A /* Pods_Beefmode.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +63,8 @@
 			children = (
 				A55435E5244F798A007B0CB5 /* Beefmode */,
 				A55435E4244F798A007B0CB5 /* Products */,
+				ADDAC7EEB71C6F032B62DCD6 /* Pods */,
+				DB08D10806C5BA660E027C91 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -91,6 +102,8 @@
 		A55BF7462452443A009873F9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A568EFBF2477E8950051DB1F /* GoogleService-Info.plist */,
+				A58181F624749CBC0010F022 /* Utilities.swift */,
 				A55435E6244F798A007B0CB5 /* AppDelegate.swift */,
 				A55435E8244F798A007B0CB5 /* SceneDelegate.swift */,
 				A55435EF244F798E007B0CB5 /* Assets.xcassets */,
@@ -125,6 +138,24 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		ADDAC7EEB71C6F032B62DCD6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CF7AB727A525A019945EFAC4 /* Pods-Beefmode.debug.xcconfig */,
+				110F123D9658F9F202A61235 /* Pods-Beefmode.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DB08D10806C5BA660E027C91 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9297B8EF469BCA3CDC0B098B /* Pods_Beefmode.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +163,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A55435F7244F798E007B0CB5 /* Build configuration list for PBXNativeTarget "Beefmode" */;
 			buildPhases = (
+				313A76DC7D12444495E8DE21 /* [CP] Check Pods Manifest.lock */,
 				A55435DF244F798A007B0CB5 /* Sources */,
 				A55435E0244F798A007B0CB5 /* Frameworks */,
 				A55435E1244F798A007B0CB5 /* Resources */,
+				444565E77963144E7F4BEED5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -184,12 +217,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				A55435F3244F798E007B0CB5 /* LaunchScreen.storyboard in Resources */,
+				A568EFC02477E8950051DB1F /* GoogleService-Info.plist in Resources */,
 				A55435F0244F798E007B0CB5 /* Assets.xcassets in Resources */,
 				A55435EE244F798A007B0CB5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		313A76DC7D12444495E8DE21 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Beefmode-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		444565E77963144E7F4BEED5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Beefmode/Pods-Beefmode-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Beefmode/Pods-Beefmode-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Beefmode/Pods-Beefmode-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A55435DF244F798A007B0CB5 /* Sources */ = {
@@ -204,6 +280,7 @@
 				A5FBE322247435E60091A5F4 /* LoginViewController.swift in Sources */,
 				A55BF74C245267CA009873F9 /* Beef.swift in Sources */,
 				A55435E9244F798A007B0CB5 /* SceneDelegate.swift in Sources */,
+				A58181F724749CBC0010F022 /* Utilities.swift in Sources */,
 				A55435FC244FDC18007B0CB5 /* NewBeefViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,6 +423,7 @@
 		};
 		A55435F8244F798E007B0CB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF7AB727A525A019945EFAC4 /* Pods-Beefmode.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -364,6 +442,7 @@
 		};
 		A55435F9244F798E007B0CB5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 110F123D9658F9F202A61235 /* Pods-Beefmode.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
