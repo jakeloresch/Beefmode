@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Title-->
+        <!--Home-->
         <scene sceneID="3mD-E3-Au7">
             <objects>
-                <tableViewController id="pji-c6-HEs" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="HomeVC" title="Home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pji-c6-HEs" customClass="HomeTableViewController" customModule="Beefmode" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="io1-tE-j3L">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -52,7 +52,7 @@
             </objects>
             <point key="canvasLocation" x="264" y="123"/>
         </scene>
-        <!--Existing Beef-->
+        <!--Table View Controller-->
         <scene sceneID="wgK-gQ-j62">
             <objects>
                 <tableViewController id="2Cb-7N-3pn" sceneMemberID="viewController">
@@ -75,7 +75,7 @@
                             <outlet property="delegate" destination="2Cb-7N-3pn" id="0I9-nl-jUo"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Existing Beef" id="fe7-uj-7J9"/>
+                    <navigationItem key="navigationItem" id="fe7-uj-7J9"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1v0-WJ-ix4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -174,7 +174,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="rjt-pQ-aev">
                                 <rect key="frame" x="24" y="112" width="366" height="288"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QkO-DM-xT0">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QkO-DM-xT0">
                                         <rect key="frame" x="0.0" y="0.0" width="366" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -230,11 +230,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="gAy-ti-NPM"/>
                     <connections>
+                        <outlet property="emailTextField" destination="QkO-DM-xT0" id="nfd-pX-6rS"/>
                         <outlet property="feedbackLabel" destination="F3K-s1-O2b" id="VIP-ax-PKY"/>
                         <outlet property="forgotPasswordButton" destination="K1p-UZ-uGk" id="nrz-9k-R1p"/>
                         <outlet property="loginButton" destination="G3q-1K-ZdE" id="u4q-Yg-m3k"/>
                         <outlet property="passwordTextField" destination="dFU-If-452" id="cHn-fS-F3L"/>
-                        <outlet property="usernameTextField" destination="QkO-DM-xT0" id="0jM-1I-RLA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0tU-PA-cLD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

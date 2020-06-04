@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,7 +18,8 @@
 		A55BF74E24526B29009873F9 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55BF74D24526B29009873F9 /* Comment.swift */; };
 		A568EFC02477E8950051DB1F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A568EFBF2477E8950051DB1F /* GoogleService-Info.plist */; };
 		A58181F724749CBC0010F022 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58181F624749CBC0010F022 /* Utilities.swift */; };
-		A5F449FD24526EB600366232 /* BeefListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F449FC24526EB600366232 /* BeefListViewController.swift */; };
+		A5BE0F9F24893AC100F09BEC /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BE0F9E24893AC100F09BEC /* HomeTableViewController.swift */; };
+		A5E2A76B24800FC600BDD43A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E2A76A24800FC600BDD43A /* Constants.swift */; };
 		A5FBE322247435E60091A5F4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FBE321247435E60091A5F4 /* LoginViewController.swift */; };
 		A5FBE324247436990091A5F4 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FBE323247436990091A5F4 /* SignupViewController.swift */; };
 		CC173270F14684861A6DF07A /* Pods_Beefmode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9297B8EF469BCA3CDC0B098B /* Pods_Beefmode.framework */; };
@@ -40,7 +41,9 @@
 		A55BF74D24526B29009873F9 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		A568EFBF2477E8950051DB1F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A58181F624749CBC0010F022 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utilities.swift; path = ../../../../../Downloads/CustomLoginDemo/CustomLoginDemo/Helpers/Utilities.swift; sourceTree = "<group>"; };
-		A5F449FC24526EB600366232 /* BeefListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeefListViewController.swift; sourceTree = "<group>"; };
+		A5BE0F9E24893AC100F09BEC /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		A5E2A76924800FB400BDD43A /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		A5E2A76A24800FC600BDD43A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A5FBE321247435E60091A5F4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A5FBE323247436990091A5F4 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		CF7AB727A525A019945EFAC4 /* Pods-Beefmode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Beefmode.debug.xcconfig"; path = "Target Support Files/Pods-Beefmode/Pods-Beefmode.debug.xcconfig"; sourceTree = "<group>"; };
@@ -79,6 +82,7 @@
 		A55435E5244F798A007B0CB5 /* Beefmode */ = {
 			isa = PBXGroup;
 			children = (
+				A5E2A76824800F9E00BDD43A /* Helpers */,
 				A5F449FB24526E7E00366232 /* Storyboards */,
 				A55BF7482452445B009873F9 /* Model Controllers */,
 				A55BF74724524452009873F9 /* Models */,
@@ -92,9 +96,9 @@
 			isa = PBXGroup;
 			children = (
 				A55435FB244FDC18007B0CB5 /* NewBeefViewController.swift */,
-				A5F449FC24526EB600366232 /* BeefListViewController.swift */,
 				A5FBE321247435E60091A5F4 /* LoginViewController.swift */,
 				A5FBE323247436990091A5F4 /* SignupViewController.swift */,
+				A5BE0F9E24893AC100F09BEC /* HomeTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -129,6 +133,15 @@
 			path = "Model Controllers";
 			sourceTree = "<group>";
 		};
+		A5E2A76824800F9E00BDD43A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A5E2A76924800FB400BDD43A /* Utilities.swift */,
+				A5E2A76A24800FC600BDD43A /* Constants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		A5F449FB24526E7E00366232 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,7 +157,6 @@
 				CF7AB727A525A019945EFAC4 /* Pods-Beefmode.debug.xcconfig */,
 				110F123D9658F9F202A61235 /* Pods-Beefmode.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -273,8 +285,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5FBE324247436990091A5F4 /* SignupViewController.swift in Sources */,
+				A5BE0F9F24893AC100F09BEC /* HomeTableViewController.swift in Sources */,
+				A5E2A76B24800FC600BDD43A /* Constants.swift in Sources */,
 				A55435E7244F798A007B0CB5 /* AppDelegate.swift in Sources */,
-				A5F449FD24526EB600366232 /* BeefListViewController.swift in Sources */,
 				A55BF74E24526B29009873F9 /* Comment.swift in Sources */,
 				A55BF74A2452453F009873F9 /* BeefController.swift in Sources */,
 				A5FBE322247435E60091A5F4 /* LoginViewController.swift in Sources */,

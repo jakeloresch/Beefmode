@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
 
     
-    @IBOutlet weak var usernameTextField: UITextField!
+
+    @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var feedbackLabel: UILabel!
     @IBOutlet weak var loginButton: UIButton!
@@ -30,7 +32,7 @@ class LoginViewController: UIViewController {
         feedbackLabel.alpha = 0
         
         //style elements
-        Utilities.styleTextField(usernameTextField)
+        Utilities.styleTextField(emailTextField)
         Utilities.styleTextField(passwordTextField)
         Utilities.styleFilledButton(loginButton)
         Utilities.styleFilledButton(forgotPasswordButton)
@@ -39,17 +41,34 @@ class LoginViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     @IBAction func loginButtonTapped(_ sender: Any) {
+        
+        // TODO: validate text fields
+        
+        
+        //Create cleaned versions of the text fields
+        let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        //signing in the user
+        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+            
+            if error != nil {
+                //Failure state for not signing in
+                self.feedbackLabel.text = error!.localizedDescription
+                self.feedbackLabel.alpha = 1
+            }
+            else {
+                
+                let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeTableViewController
+                
+                self.view.window?.rootViewController = homeViewController
+                self.view.window?.makeKeyAndVisible()
+                //used "self." because of working within a closure
+            }
+        }
+        
     }
     
     
