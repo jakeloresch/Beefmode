@@ -7,17 +7,24 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+
 
 class HomeTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        if Auth.auth().currentUser != nil {
+            //if User is signed in, show "Profile" in left bar button
+            navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Profile", style: .plain, target: self, action: #selector(profileButtonTapped))
+            
+        } else {
+            //if not: display "Sign in"
+            navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Log In", style: .plain, target: self, action: #selector(logInButtonTapped))
+        }
+        
     }
 
     // MARK: - Table view data source
@@ -87,4 +94,19 @@ class HomeTableViewController: UITableViewController {
     }
     */
 
+    // MARK: Bar Button functionality
+    @objc func profileButtonTapped() {
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "profileVC") as! ProfileViewController
+        self.navigationController?.pushViewController(newViewController, animated: true)
+        
+    }
+    
+    @objc func logInButtonTapped() {
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "logInVC") as! LoginViewController
+        self.navigationController?.pushViewController(newViewController, animated: true)
+    }
 }

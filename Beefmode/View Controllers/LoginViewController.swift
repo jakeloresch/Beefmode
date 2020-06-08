@@ -11,14 +11,11 @@ import FirebaseAuth
 
 class LoginViewController: UIViewController {
 
-    
-
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var feedbackLabel: UILabel!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var forgotPasswordButton: UIButton!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,9 +41,6 @@ class LoginViewController: UIViewController {
 
     @IBAction func loginButtonTapped(_ sender: Any) {
         
-        // TODO: validate text fields
-        
-        
         //Create cleaned versions of the text fields
         let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -61,15 +55,10 @@ class LoginViewController: UIViewController {
             }
             else {
                 
-                let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeTableViewController
-                
-                self.view.window?.rootViewController = homeViewController
-                self.view.window?.makeKeyAndVisible()
-                //used "self." because of working within a closure
+                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let newViewController = storyBoard.instantiateViewController(withIdentifier: "homeVC") as! HomeTableViewController
+                self.navigationController?.pushViewController(newViewController, animated: true)
             }
         }
-        
     }
-    
-    
 }

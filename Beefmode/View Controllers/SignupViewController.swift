@@ -54,7 +54,7 @@ class SignupViewController: UIViewController {
         let cleanedPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines) //I force unwrapped because it already checks for entry in if statement above
         
         if Utilities.isPasswordValid(cleanedPassword) == false {
-        //password isn't secure enough
+            //password isn't secure enough
             return "Password does not meet requirements."
         }
         
@@ -63,12 +63,12 @@ class SignupViewController: UIViewController {
     }
     
     @IBAction func signupTapped(_ sender: Any) {
-    
+        
         //Validate the fields
         let error = validateFields()
         
         if error != nil {
-             //error message will show if there's something wrong with the fields
+            //error message will show if there's something wrong with the fields
             showError(error!)
         }
         else {
@@ -92,7 +92,7 @@ class SignupViewController: UIViewController {
                     
                     let db = Firestore.firestore()
                     
-                    db.collection("users").addDocument(data: ["username":username, "uid": result!.user.uid]) { (error) in
+                    db.collection("users").addDocument(data: ["username":username, "uid": result!.user.uid ]) { (error) in
                         
                         if error != nil {
                             //show error message
@@ -104,9 +104,9 @@ class SignupViewController: UIViewController {
                 }
             }
         }
-    
+        
     }
- 
+    
     
     func showError(_ message:String) {
         
@@ -115,11 +115,16 @@ class SignupViewController: UIViewController {
     }
     
     func transitionToBeefListVC() {
-
-        let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeTableViewController
         
-        view.window?.rootViewController = homeViewController
-        view.window?.makeKeyAndVisible()
+        //        let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeTableViewController
+        //
+        //        view.window?.rootViewController = homeViewController
+        //        view.window?.makeKeyAndVisible()
         
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "homeVC") as! HomeTableViewController
+        self.navigationController?.pushViewController(newViewController, animated: true)
     }
+    
 }
+
