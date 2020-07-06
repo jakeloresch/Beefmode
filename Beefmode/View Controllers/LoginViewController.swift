@@ -37,8 +37,6 @@ class LoginViewController: UIViewController {
         
     }
     
-
-
     @IBAction func loginButtonTapped(_ sender: Any) {
         
         //Create cleaned versions of the text fields

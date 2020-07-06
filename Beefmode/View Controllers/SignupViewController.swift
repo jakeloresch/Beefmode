@@ -81,27 +81,27 @@ class SignupViewController: UIViewController {
             
             //create the user
             Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
-                if err != nil {
+                guard let result = result else {
                     
                     //there was an error creating the user
                     self.showError("Error creating user")
+                    return
                 }
+                //user was created successfully, now store the username
+                
+                let db = Firestore.firestore()
+                
+                db.collection("users").document(result.user.uid).setData(["username":username, "uid": result.user.uid ]) { (error) in
                     
-                else {
-                    //user was created successfully, now store the username
-                    
-                    let db = Firestore.firestore()
-                    
-                    db.collection("users").addDocument(data: ["username":username, "uid": result!.user.uid ]) { (error) in
-                        
-                        if error != nil {
-                            //show error message
-                            self.showError("Error saving user data")//failure state for username not being saved but email and pw are OK
-                        }
+                    if error != nil {
+                        //show error message
+                        self.showError("Error saving user data")//failure state for username not being saved but email and pw are OK
                     }
-                    //transitions to home screen
-                    self.transitionToBeefListVC()
                 }
+                
+                //transitions to home screen
+                self.transitionToBeefListVC()
+                
             }
         }
         
@@ -115,11 +115,6 @@ class SignupViewController: UIViewController {
     }
     
     func transitionToBeefListVC() {
-        
-        //        let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeTableViewController
-        //
-        //        view.window?.rootViewController = homeViewController
-        //        view.window?.makeKeyAndVisible()
         
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "homeVC") as! HomeTableViewController
