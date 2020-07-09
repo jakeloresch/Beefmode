@@ -10,32 +10,16 @@ import Foundation
 import Firebase
 import FirebaseFirestore
 
-//struct Post {
-//    var uid: String
-//    var title: String
-//    var body: String
-//    var upVotes: Int
-//    var downVotes: Int
-//    var postDate: Timestamp
-//
-//    init(uid: String, title: String, body: String, upVotes: Int, downVotes: Int, postDate: Timestamp) {
-//        self.uid = uid
-//        self.title = title
-//        self.body = body
-//        self.upVotes = upVotes
-//        self.downVotes = downVotes
-//        self.postDate = postDate
-//    }
-//}
-
 protocol DocumentSerializable  {
     init?(dictionary:[String:Any])
 }
 
 struct Post {
     var uid:String
+//    var screenName: String
     var title: String
     var body: String
+    var docIDString: String
     var upVotes: Int
     var downVotes: Int
     var postDate: Timestamp
@@ -43,26 +27,41 @@ struct Post {
     var dictionary:[String:Any] {
         return [
             "uid": uid,
+ //           "screenName": screenName,
             "title": title,
             "body": body,
+            "docIDString": docIDString,
             "upVotes": upVotes,
             "downVotes": downVotes,
             "postDate": postDate,
         ]
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case uid = "uid"
+//        case screenName = "screenName"
+        case title = "title"
+        case body = "body"
+        case docIDString = "docIDString"
+        case upVotes = "upVotes"
+        case downVotes = "downVotes"
+        case postDate = "postDate"
     }
 }
 
 extension Post: DocumentSerializable {
     init?(dictionary: [String : Any]) {
         guard let uid = dictionary["uid"] as? String,
+//            let screenName = dictionary["screenName"] as? String,
             let title = dictionary["title"] as? String,
             let body = dictionary["body"] as? String,
+            let docIDString = dictionary["docIDString"] as? String,
             let upVotes = dictionary["upVotes"] as? Int,
             let downVotes = dictionary["downVotes"] as? Int,
             let postDate = dictionary ["postDate"] as? Timestamp
             else {return nil}
         
-        self.init(uid: uid, title: title, body: body, upVotes: upVotes, downVotes: downVotes, postDate: postDate)
+        self.init(uid: uid, title: title, body: body, docIDString: docIDString, upVotes: upVotes, downVotes: downVotes, postDate: postDate)
     }
 }
 

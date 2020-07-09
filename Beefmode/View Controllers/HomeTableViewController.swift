@@ -39,7 +39,7 @@ class HomeTableViewController: UITableViewController {
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
-            }
+            } 
         }
     }
     
@@ -58,8 +58,21 @@ class HomeTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "postCell")!
         let post = self.postArray[indexPath.row] as Post
         cell.textLabel?.text = post.title
-        cell.detailTextLabel?.text = post.uid
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      tableView.deselectRow(at: indexPath, animated: true)
+      let controller = PostViewController.fromStoryboard()
+        
+        controller.docID = postArray[indexPath.row].docIDString
+        controller.titleFromHomeVC = postArray[indexPath.row].title
+        controller.bodyFromHomeVC = postArray[indexPath.row].body
+        controller.userFromHomeVC = postArray[indexPath.row].uid
+        controller.upVotesFromHomeVC = Double(postArray[indexPath.row].upVotes)
+        controller.downVotesFromHomeVC = Double(postArray[indexPath.row].downVotes)
+        
+      self.navigationController?.pushViewController(controller, animated: true)
     }
     
     

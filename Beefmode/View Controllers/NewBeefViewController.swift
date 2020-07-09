@@ -8,7 +8,7 @@
 
 import UIKit
 import Firebase
-import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class NewBeefViewController: UIViewController {
     
@@ -17,12 +17,11 @@ class NewBeefViewController: UIViewController {
     @IBOutlet weak var bodyTextField: UITextField!
     @IBOutlet weak var charactersRemaining: UILabel!
     
-    //    weak var delegate: NewBeefViewControllerDelegate?
-    
     let db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(transitionToBeefListVC))
         titleTextField.delegate = self
         charactersRemaining.text = String(64) //ensure that value matches 'length' at end of textField function in extention.
@@ -30,48 +29,39 @@ class NewBeefViewController: UIViewController {
     
     @IBAction func postButtonPressed(_ sender: Any) {
         
-//        let db = Firestore.firestore()
-        //
-        //            db.collection("posts").addDocument(data: [
-        //            "uid": Auth.auth().currentUser!.uid,
-        //            "title": titleTextField.text!,
-        //            "body": bodyTextField.text!,
-        //            "upVotes": 0,
-        //            "downVotes": 0,
-        //            "postDate": Timestamp()
-        //        ])
         
-//        let uid = Auth.auth().currentUser!.uid,
-//        let title = titleTextField.text,
-//        let body = bodyTextField.text,
-//        let upVotes: 0,
-//        let downVotes: 0,
-//        let postDate = Timestamp()
-//
-        let newPost = Post(uid: Auth.auth().currentUser!.uid, title: titleTextField.text!, body: bodyTextField.text!, upVotes: 0, downVotes: 0, postDate: Timestamp())
+        let newDocumentID = UUID().uuidString
         
-            var ref:DocumentReference? = nil
-            ref = self.db.collection("posts").addDocument(data: newPost.dictionary) {
-                error in
-                
-                if let error = error {
-                    print("Error adding document: \(error.localizedDescription)")
-                }else{
-                    print("Document added with ID: \(ref!.documentID)")
-                }
-                
+        let newPost: [String: Any] = [
+        "uid": Auth.auth().currentUser!.uid,
+        "title": titleTextField.text!,
+        "body": bodyTextField.text!,
+        "docIDString": newDocumentID,
+        "upVotes": 0,
+        "downVotes": 0,
+        "postDate": Timestamp()
+        ]
+
+        db.collection("posts").document(newDocumentID).setData(newPost) {
+        error in
+
+            if let error = error {
+                print("Error adding document: \(error.localizedDescription)")
+            }else{
+                print("Document added with ID: \(newDocumentID)")
             }
-        
+
+        }
+  
     transitionToBeefListVC()
 }
-
+    
 @objc func transitionToBeefListVC() {
     
     let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
     let newViewController = storyBoard.instantiateViewController(withIdentifier: "homeVC") as! HomeTableViewController
     self.navigationController?.pushViewController(newViewController, animated: true)
 }
-
 }
 
 // MARK: Extention for charactersRemaining
@@ -95,7 +85,3 @@ extension NewBeefViewController: UITextFieldDelegate {
     }
     
 }
-
-//protocol NewBeefViewControllerDelegate: NSObjectProtocol {
-//    func postController(_ controller: NewBeefViewController, didSubmitFormWithPost post: Post)
-//}
