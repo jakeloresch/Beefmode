@@ -18,12 +18,10 @@ class SignupViewController: UIViewController {
     @IBOutlet weak var feedbackLabel: UILabel!
     @IBOutlet weak var signupButton: UIButton!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUpElements()
-        
     }
     
     
@@ -63,6 +61,7 @@ class SignupViewController: UIViewController {
     }
     
     @IBAction func signupTapped(_ sender: Any) {
+        self.showSpinner(onView: self.view)
         
         //Validate the fields
         let error = validateFields()
@@ -98,15 +97,13 @@ class SignupViewController: UIViewController {
                         self.showError("Error saving user data")//failure state for username not being saved but email and pw are OK
                     }
                 }
-                
+                self.removeSpinner()
                 //transitions to home screen
                 self.transitionToBeefListVC()
                 
             }
         }
-        
     }
-    
     
     func showError(_ message:String) {
         

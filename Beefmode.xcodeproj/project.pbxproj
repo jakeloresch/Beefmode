@@ -17,6 +17,8 @@
 		A55435FC244FDC18007B0CB5 /* NewBeefViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55435FB244FDC18007B0CB5 /* NewBeefViewController.swift */; };
 		A56134D324B2B1C90018A7EC /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56134D224B2B1C90018A7EC /* PostViewController.swift */; };
 		A577D354248AA956002DC7FE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A577D353248AA955002DC7FE /* GoogleService-Info.plist */; };
+		A57F753F24B939E1005A1AAE /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57F753E24B939E1005A1AAE /* Comment.swift */; };
+		A59722D824CDB60300E0861A /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59722D724CDB60300E0861A /* CommentViewController.swift */; };
 		A59FDE43248AA33500406870 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59FDE42248AA33500406870 /* Utilities.swift */; };
 		A5A72770248A9DA400097550 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7276F248A9DA400097550 /* ProfileViewController.swift */; };
 		A5BE0F9F24893AC100F09BEC /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BE0F9E24893AC100F09BEC /* HomeTableViewController.swift */; };
@@ -39,6 +41,8 @@
 		A55435FB244FDC18007B0CB5 /* NewBeefViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBeefViewController.swift; sourceTree = "<group>"; };
 		A56134D224B2B1C90018A7EC /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		A577D353248AA955002DC7FE /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A57F753E24B939E1005A1AAE /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		A59722D724CDB60300E0861A /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CommentViewController.swift; path = "Beefmode/View Controllers/CommentViewController.swift"; sourceTree = SOURCE_ROOT; };
 		A59FDE42248AA33500406870 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		A5A7276F248A9DA400097550 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A5BE0F9E24893AC100F09BEC /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +97,7 @@
 		A55435FA244FDBFD007B0CB5 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A59722D724CDB60300E0861A /* CommentViewController.swift */,
 				A5BE0F9E24893AC100F09BEC /* HomeTableViewController.swift */,
 				A5FBE321247435E60091A5F4 /* LoginViewController.swift */,
 				A55435FB244FDC18007B0CB5 /* NewBeefViewController.swift */,
@@ -121,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				A52B1A4624ABE00500DBAF98 /* Post.swift */,
+				A57F753E24B939E1005A1AAE /* Comment.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -274,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A59722D824CDB60300E0861A /* CommentViewController.swift in Sources */,
 				A5FBE324247436990091A5F4 /* SignupViewController.swift in Sources */,
 				A5BE0F9F24893AC100F09BEC /* HomeTableViewController.swift in Sources */,
 				A5E2A76B24800FC600BDD43A /* Constants.swift in Sources */,
@@ -281,6 +288,7 @@
 				A55435E7244F798A007B0CB5 /* AppDelegate.swift in Sources */,
 				A5A72770248A9DA400097550 /* ProfileViewController.swift in Sources */,
 				A5FBE322247435E60091A5F4 /* LoginViewController.swift in Sources */,
+				A57F753F24B939E1005A1AAE /* Comment.swift in Sources */,
 				A55435E9244F798A007B0CB5 /* SceneDelegate.swift in Sources */,
 				A55435FC244FDC18007B0CB5 /* NewBeefViewController.swift in Sources */,
 				A52B1A4724ABE00500DBAF98 /* Post.swift in Sources */,
@@ -430,6 +438,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 2VMDX2Q973;
 				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/Beefmode/Resources/Info.plist";
@@ -450,6 +459,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 2VMDX2Q973;
 				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/Beefmode/Resources/Info.plist";

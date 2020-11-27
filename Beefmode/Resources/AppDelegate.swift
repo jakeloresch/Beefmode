@@ -19,6 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //added from Firebase
         FirebaseApp.configure()
         
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) {(success, _) in
+            if success {
+                print("User allowed alerts")
+            }
+        }
         return true
     }
 

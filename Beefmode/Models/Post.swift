@@ -10,13 +10,12 @@ import Foundation
 import Firebase
 import FirebaseFirestore
 
-protocol DocumentSerializable  {
+protocol PostDocumentSerializable  {
     init?(dictionary:[String:Any])
 }
 
 struct Post {
     var uid:String
-//    var screenName: String
     var title: String
     var body: String
     var docIDString: String
@@ -27,19 +26,17 @@ struct Post {
     var dictionary:[String:Any] {
         return [
             "uid": uid,
- //           "screenName": screenName,
             "title": title,
             "body": body,
             "docIDString": docIDString,
             "upVotes": upVotes,
             "downVotes": downVotes,
-            "postDate": postDate,
+            "postDate": postDate
         ]
     }
     
     enum CodingKeys: String, CodingKey {
         case uid = "uid"
-//        case screenName = "screenName"
         case title = "title"
         case body = "body"
         case docIDString = "docIDString"
@@ -49,16 +46,16 @@ struct Post {
     }
 }
 
-extension Post: DocumentSerializable {
+extension Post: PostDocumentSerializable {
     init?(dictionary: [String : Any]) {
         guard let uid = dictionary["uid"] as? String,
-//            let screenName = dictionary["screenName"] as? String,
             let title = dictionary["title"] as? String,
             let body = dictionary["body"] as? String,
             let docIDString = dictionary["docIDString"] as? String,
             let upVotes = dictionary["upVotes"] as? Int,
             let downVotes = dictionary["downVotes"] as? Int,
             let postDate = dictionary ["postDate"] as? Timestamp
+            
             else {return nil}
         
         self.init(uid: uid, title: title, body: body, docIDString: docIDString, upVotes: upVotes, downVotes: downVotes, postDate: postDate)
