@@ -63,28 +63,17 @@ class HomeTableViewController: UITableViewController {
     }
     
     func loadNewPostsIfSignedIn() {
-            print("Loading block list ...")
+        
+        let docRef =  db.collection("users").document(currentUserAsString)
 
-        let blockListRef = db.collection("users").document(currentUserAsString)
-
-        blockListRef.getDocument { [self] (document, error) in
+        docRef.getDocument { (document, error) in
             if let document = document, document.exists {
-                blockList = document.get("blockedUsers") as? [String] ?? []
+                self.blockList = document.get("blockedUsers") as? [String] ?? []
+                print("Blocked Users: \(self.blockList)")
             } else {
                 print("Document does not exist")
             }
         }
-        
-//        let docRef =  db.collection("users").document(currentUserAsString)
-//
-//        docRef.getDocument { (document, error) in
-//            if let document = document, document.exists {
-//                self.blockList = document.get("blockedUsers") as? [String] ?? []
-//                print("Blocked Users: \(self.blockList)")
-//            } else {
-//                print("Document does not exist")
-//            }
-//        }
 
         print("Loading new posts...")
 //        db.collection("posts").order(by: "postDate", descending: true).limit(to: 50).getDocuments() {
@@ -109,7 +98,7 @@ class HomeTableViewController: UITableViewController {
 //            }
 //        }
 //    }
-        print("Blocked users: \(self.blockList)")
+        print("Blocked users outside of scope: \(blockList)")
         let postsDocRef = db.collection("posts")
         
 //        postsDocRef

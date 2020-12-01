@@ -57,7 +57,7 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         self.titleLabel.text = titleFromHomeVC
         self.bodyLabel.text = bodyFromHomeVC
-
+        
         showCommentsTableView()
         checkForLoginStatusForCommentButton()
         loadUserAndChart()
@@ -71,8 +71,8 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
                 if let document = snapshot {
                     
                     guard let data = document.data(),
-                        let usernameString = data["username"] as? String else {
-                            return
+                          let usernameString = data["username"] as? String else {
+                        return
                     }
                     self.usernameLabel.text = ("🥩\(usernameString)")
                     
@@ -80,7 +80,7 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
                     
                     print("error reaching database")
                 }
-        }
+            }
         
         self.pieChart.chartDescription?.text = ""
         
@@ -123,12 +123,12 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func deletePostButtonPressed() {
         let alert = UIAlertController(title: "Post Options", message: "You can delete the post here if you'd like.", preferredStyle: .alert)
-
+        
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Delete Post", style: .destructive, handler: { action in
             self.deletePost()
         }))
-
+        
         self.present(alert, animated: true)
     }
     
@@ -161,43 +161,51 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
     func reportPost() {
         
         let newReport: [String: Any] = [
-        "Reporter": Auth.auth().currentUser!.uid,
-        "type": "post",
-        "docID": docID!,
-        "reportDate": Timestamp()
+            "Reporter": Auth.auth().currentUser!.uid,
+            "type": "post",
+            "docID": docID!,
+            "reportDate": Timestamp()
         ]
-
+        
         db.collection("reports").addDocument(data: newReport) {
-        error in
-
+            error in
+            
             if let error = error {
                 print("Error adding document: \(error.localizedDescription)")
             }else{
                 print("Report added with ID: \(newReport)")
             }
-
+            
         }
         showReportedCommentAlert()
     }
     
     func blockUser() {
         
-//        db.collection("users").document(currentUserUIDString!).setData(["blockedUsers": uidFromHomeVC!], merge: true)
-  
-       let blockRef = db.collection("users").document(currentUserUIDString!)
+        let blockRef = db.collection("users").document(currentUserUIDString!)
         var blockedUIDAsArray: [String] = []
         blockedUIDAsArray.append(uidFromHomeVC!)
         
         blockRef.updateData([
             "blockedUsers": FieldValue.arrayUnion(blockedUIDAsArray)
         ])
+        
+        showBlockedUserAlert()
+    }
+    
+    func showBlockedUserAlert() {
+        let alert = UIAlertController(title: "Blocked.", message: "You will not be able to see each other's posts, comments or profiles.", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true)
     }
     
     func showReportedCommentAlert() {
         let alert = UIAlertController(title: "Reported.", message: "Thank you for reporting, our team will review this shortly.", preferredStyle: .alert)
-
+        
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-
+        
         self.present(alert, animated: true)
     }
     
@@ -209,8 +217,8 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
                 if let document = snapshot {
                     
                     guard let data = document.data(),
-                        let username = data["username"] as? String else {
-                            return
+                          let username = data["username"] as? String else {
+                        return
                     }
                     self.usernameForComment = username
                 } else {
@@ -254,7 +262,7 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.present(composeAlert, animated: true, completion: nil)
                 
                 
-        }
+            }
     }
     
     @objc func showCommentsTableView() {
@@ -386,10 +394,10 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
                 if let document = snapshot {
                     
                     guard let data = document.data(),
-                        let refreshedUpVotes = data["upVotes"] as? Double,
-                        let refreshedDownVotes = data["downVotes"] as? Double
-                        else {
-                            return
+                          let refreshedUpVotes = data["upVotes"] as? Double,
+                          let refreshedDownVotes = data["downVotes"] as? Double
+                    else {
+                        return
                     }
                     
                     self.upVotesFromHomeVC = refreshedUpVotes
@@ -410,7 +418,7 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
                     
                     print("error reaching database")
                 }
-        }
+            }
         
     }
     
