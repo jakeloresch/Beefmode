@@ -31,8 +31,8 @@ class HomeTableViewController: UITableViewController {
     
     var db: Firestore!
     
-    var blockList = [String]()
-    var unfilteredPostArray = [Post]()
+//    var blockList = [String]()
+    var blockList: [String] = ["Vx78zaAY2tXYQEQ3gL1NAIAvSTS2"]
     var postArray = [Post]()
     
     override func viewDidLoad() {
@@ -64,34 +64,57 @@ class HomeTableViewController: UITableViewController {
     }
     
     func loadNewPostsIfSignedIn() {
-            print("Loading block list ...")
-        
-        let docRef =  db.collection("users").document(currentUserAsString)
-
-        docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                self.blockList = document.get("blockedUsers") as? [String] ?? []
-                print("Blocked users are \(self.blockList)")
-            } else {
-                print("Document does not exist")
-            }
-        }
+//            print("Loading block list ...")
+//
+//        let docRef =  db.collection("users").document(currentUserAsString)
+//
+//        docRef.getDocument { (document, error) in
+//            if let document = document, document.exists {
+//                self.blockList = document.get("blockedUsers") as? [String] ?? []
+//                print("Blocked Users: \(self.blockList)")
+//            } else {
+//                print("Document does not exist")
+//            }
+//        }
 
         print("Loading new posts...")
-        db.collection("posts").order(by: "postDate", descending: true).limit(to: 50).getDocuments() {
-            
+//        db.collection("posts").order(by: "postDate", descending: true).limit(to: 50).getDocuments() {
+
+//            querySnapshot, error in
+//            if let error = error {
+//                print("\(error.localizedDescription)")
+//            }else{
+//                self.unfilteredPostArray = querySnapshot!.documents.compactMap({Post(dictionary: $0.data())})
+//
+//                print("Unfiltered post count is \(self.unfilteredPostArray.count)")
+//
+//                self.postArray = self.unfilteredPostArray.filter { post in
+//                    !self.blockList.contains(post.uid)
+//                }
+//
+//                print("Filtered posts count is \(self.postArray.count)")
+//                DispatchQueue.main.async {
+//                    self.tableView.reloadData()
+//                    self.removeSpinner()
+//                }
+//            }
+//        }
+//    }
+        
+        let postsDocRef = db.collection("posts")
+
+        postsDocRef
+            .whereField("uid", notIn: blockList)
+        postsDocRef
+            .order(by: "postDate", descending: true).limit(to: 50)
+            .getDocuments() {
+
             querySnapshot, error in
             if let error = error {
                 print("\(error.localizedDescription)")
             }else{
-                self.unfilteredPostArray = querySnapshot!.documents.compactMap({Post(dictionary: $0.data())})
-                
-                print("Unfiltered post count is \(self.unfilteredPostArray.count)")
-                
-                self.postArray = self.unfilteredPostArray.filter { post in
-                    !self.blockList.contains(post.uid)
-                }
-                
+                self.postArray = querySnapshot!.documents.compactMap({Post(dictionary: $0.data())})
+
                 print("Filtered posts count is \(self.postArray.count)")
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
@@ -100,7 +123,7 @@ class HomeTableViewController: UITableViewController {
             }
         }
     }
-    
+
     func loadNewPostsIfNotSignedIn() {
         
         db.collection("posts").order(by: "postDate", descending: true).limit(to: 50).getDocuments() {

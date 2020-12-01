@@ -151,6 +151,9 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
         alert.addAction(UIAlertAction(title: "Yes, Report", style: .destructive, handler: { action in
             self.reportPost()
         }))
+        alert.addAction(UIAlertAction(title: "Block User", style: .destructive, handler: { action in
+            self.blockUser()
+        }))
         
         self.present(alert, animated: true)
     }
@@ -175,6 +178,12 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         }
         showReportedCommentAlert()
+    }
+    
+    func blockUser() {
+        
+        db.collection("users").document(currentUserUIDString!).setData(["blockedUsers": uidFromHomeVC!], merge: true)
+        
     }
     
     func showReportedCommentAlert() {
