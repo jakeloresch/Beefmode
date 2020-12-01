@@ -69,6 +69,7 @@ class SignupViewController: UIViewController {
         if error != nil {
             //error message will show if there's something wrong with the fields
             showError(error!)
+            self.removeSpinner()
         }
         else {
             
