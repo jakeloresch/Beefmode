@@ -58,9 +58,17 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.titleLabel.text = titleFromHomeVC
         self.bodyLabel.text = bodyFromHomeVC
         
+        checkForVotes()
         showCommentsTableView()
         checkForLoginStatusForCommentButton()
         loadUserAndChart()
+    }
+    
+    func checkForVotes() {
+        if (upVotesFromHomeVC == 0) && (downVotesFromHomeVC == 0) {
+            print("No Votes")
+            pieChart.isHidden = true
+        }
     }
     
     func loadUserAndChart() {
@@ -286,6 +294,8 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+    // MARK: Table View Data Source
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return commentArray.count
@@ -324,6 +334,8 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         self.navigationController?.pushViewController(controller, animated: true)
     }
+    
+    // MARK: Voting
     
     @IBAction func increment(_ sender: Any) {
         db = Firestore.firestore()
@@ -388,6 +400,7 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func refreshChart() {
         
+        pieChart.isHidden = false
         self.db.collection("posts").document(docID!)
             .getDocument { (snapshot, error ) in
                 
