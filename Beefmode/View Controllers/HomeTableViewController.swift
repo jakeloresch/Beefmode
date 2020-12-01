@@ -31,8 +31,7 @@ class HomeTableViewController: UITableViewController {
     
     var db: Firestore!
     
-//    var blockList = [String]()
-    var blockList: [String] = ["Vx78zaAY2tXYQEQ3gL1NAIAvSTS2"]
+    var blockList = [String]()
     var postArray = [Post]()
     
     override func viewDidLoad() {
@@ -64,8 +63,18 @@ class HomeTableViewController: UITableViewController {
     }
     
     func loadNewPostsIfSignedIn() {
-//            print("Loading block list ...")
-//
+            print("Loading block list ...")
+
+        let blockListRef = db.collection("users").document(currentUserAsString)
+
+        blockListRef.getDocument { [self] (document, error) in
+            if let document = document, document.exists {
+                blockList = document.get("blockedUsers") as? [String] ?? []
+            } else {
+                print("Document does not exist")
+            }
+        }
+        
 //        let docRef =  db.collection("users").document(currentUserAsString)
 //
 //        docRef.getDocument { (document, error) in
@@ -100,11 +109,11 @@ class HomeTableViewController: UITableViewController {
 //            }
 //        }
 //    }
-        
+        print("Blocked users: \(self.blockList)")
         let postsDocRef = db.collection("posts")
-
-        postsDocRef
-            .whereField("uid", notIn: blockList)
+        
+//        postsDocRef
+//            .whereField("uid", notIn: blockList)
         postsDocRef
             .order(by: "postDate", descending: true).limit(to: 50)
             .getDocuments() {

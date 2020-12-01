@@ -182,8 +182,15 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func blockUser() {
         
-        db.collection("users").document(currentUserUIDString!).setData(["blockedUsers": uidFromHomeVC!], merge: true)
+//        db.collection("users").document(currentUserUIDString!).setData(["blockedUsers": uidFromHomeVC!], merge: true)
+  
+       let blockRef = db.collection("users").document(currentUserUIDString!)
+        var blockedUIDAsArray: [String] = []
+        blockedUIDAsArray.append(uidFromHomeVC!)
         
+        blockRef.updateData([
+            "blockedUsers": FieldValue.arrayUnion(blockedUIDAsArray)
+        ])
     }
     
     func showReportedCommentAlert() {
