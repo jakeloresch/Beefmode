@@ -22,7 +22,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     @IBAction func deleteAccountButton(_ sender: Any) {
-//        deleteAccountButtonTapped()
+        //deleteAccountButtonTapped()
     }
     
     var userPostArray = [Post]()
@@ -77,38 +77,18 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
 //
 //        alert.addAction(UIAlertAction(title: "Yes, delete it all", style: .destructive, handler: { action in
 //
-//
 //            guard let currentUser = Auth.auth().currentUser else { return }
 //
 //            var db: Firestore!
 //            db = Firestore.firestore()
-//            let batch = db.batch()
 //
 //
-//            db.collection("posts").whereField("uid", isEqualTo: currentUser.uid).getDocuments() {
-//                querySnapshot, error in
-//                if let error = error {
-//                    print("\(error.localizedDescription)")
-//                }else{
-//                    querySnapshot
-//                }
 //
-//            }
-//            //db.collection("posts").whereField("uid", isEqualTo: currentUser.uid).delete
-//
-//
-//            db.collection("users").document(currentUser.uid).delete() { err in
-//                if let err = err {
-//                    print("Error removing document: \(err)")
-//                } else {
-//                    print("Document successfully removed!")
-//                }
-//            }
 //
 //            currentUser.delete { error in
 //                if error != nil {
 //                    // An error happened.
-//                    print("Error deleting user")
+//                    print("Error deleting authorized user")
 //                } else {
 //                    print("User deleted")
 //                    // Account deleted.

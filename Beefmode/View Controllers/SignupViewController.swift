@@ -18,6 +18,8 @@ class SignupViewController: UIViewController {
     @IBOutlet weak var feedbackLabel: UILabel!
     @IBOutlet weak var signupButton: UIButton!
     
+    var usernameCheck: [String: Any] = [:]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,10 +58,26 @@ class SignupViewController: UIViewController {
             return "Password does not meet requirements."
         }
         
+//        let db = Firestore.firestore()
+//
+//        db.collection("users").whereField("username", isEqualTo: usernameTextField.text!)
+//            .getDocuments() { (querySnapshot, error) in
+//                if let error = error {
+//                    print("Error getting documents: \(error)")
+//                } else {
+//                    for document in querySnapshot!.documents {
+//                        self.usernameCheck = document.data()
+//                    }
+//                }
+//            }
+//
+//        if usernameCheck.isEmpty == false {
+//            return "Username already taken"
+//        }
         
         return nil
     }
-    
+     
     @IBAction func signupTapped(_ sender: Any) {
         self.showSpinner(onView: self.view)
         
@@ -85,6 +103,7 @@ class SignupViewController: UIViewController {
                     
                     //there was an error creating the user
                     self.showError("Error creating user")
+                    self.removeSpinner()
                     return
                 }
                 //user was created successfully, now store the username
@@ -96,6 +115,7 @@ class SignupViewController: UIViewController {
                     if error != nil {
                         //show error message
                         self.showError("Error saving user data")//failure state for username not being saved but email and pw are OK
+                        self.removeSpinner()
                     }
                 }
                 self.removeSpinner()
