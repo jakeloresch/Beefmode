@@ -58,10 +58,17 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.titleLabel.text = titleFromHomeVC
         self.bodyLabel.text = bodyFromHomeVC
         
+        checkTimestamp()
         checkForVotes()
         showCommentsTableView()
         checkForLoginStatusForCommentButton()
         loadUserAndChart()
+    }
+    
+    func checkTimestamp() {
+        
+        print("Timestamp is \(postDateFromHomeVC?.dateValue())")
+        
     }
     
     func checkForVotes() {
